@@ -9,12 +9,15 @@ namespace MarsRover
         public MarsRoverForm()
         {
             InitializeComponent();
+
+            txtOutput.ReadOnly = true;
         }
 
         private void BtnRun_Click(object sender, EventArgs e)
         {
             try
             {
+                txtOutput.Text = string.Empty;
                 var input = txtInput.Text;
                 var output = MarsRoverCalculator.Calculate(input);
                 txtOutput.Text = output;
