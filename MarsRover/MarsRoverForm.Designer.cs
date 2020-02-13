@@ -1,6 +1,6 @@
 ﻿namespace MarsRover
 {
-    partial class Form1
+    partial class MarsRoverForm
     {
         /// <summary>
         /// Required designer variable.
