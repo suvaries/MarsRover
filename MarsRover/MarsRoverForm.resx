@@ -117,4 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Assumptions: 
+N, E, S, W letters are used for north, east, south and west respectively.
+If a rover comes to a point on which there is a previous rover, the latter rover is assumed to crash and stop at the point before crash.
+If a rover tries to go out of range it is assumed to crash and stop at the point before going outside.</value>
+  </data>
 </root>

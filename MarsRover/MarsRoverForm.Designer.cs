@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MarsRoverForm));
             this.label1 = new System.Windows.Forms.Label();
             this.txtInput = new System.Windows.Forms.TextBox();
             this.btnRun = new System.Windows.Forms.Button();
             this.txtOutput = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -49,12 +51,12 @@
             this.txtInput.Location = new System.Drawing.Point(16, 39);
             this.txtInput.Multiline = true;
             this.txtInput.Name = "txtInput";
-            this.txtInput.Size = new System.Drawing.Size(151, 185);
+            this.txtInput.Size = new System.Drawing.Size(213, 185);
             this.txtInput.TabIndex = 1;
             // 
             // btnRun
             // 
-            this.btnRun.Location = new System.Drawing.Point(195, 115);
+            this.btnRun.Location = new System.Drawing.Point(265, 121);
             this.btnRun.Name = "btnRun";
             this.btnRun.Size = new System.Drawing.Size(75, 23);
             this.btnRun.TabIndex = 2;
@@ -64,32 +66,44 @@
             // 
             // txtOutput
             // 
-            this.txtOutput.Location = new System.Drawing.Point(297, 39);
+            this.txtOutput.Location = new System.Drawing.Point(373, 39);
             this.txtOutput.Multiline = true;
             this.txtOutput.Name = "txtOutput";
-            this.txtOutput.Size = new System.Drawing.Size(151, 185);
+            this.txtOutput.Size = new System.Drawing.Size(213, 185);
             this.txtOutput.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(294, 13);
+            this.label2.Location = new System.Drawing.Point(370, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Output";
             // 
-            // Form1
+            // textBox1
+            // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(16, 257);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(570, 96);
+            this.textBox1.TabIndex = 5;
+            this.textBox1.Text = resources.GetString("textBox1.Text");
+            // 
+            // MarsRoverForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(485, 249);
+            this.ClientSize = new System.Drawing.Size(627, 368);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtOutput);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.txtInput);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "MarsRoverForm";
             this.Text = "Mars Rover";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -103,6 +117,7 @@
         private System.Windows.Forms.Button btnRun;
         private System.Windows.Forms.TextBox txtOutput;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
