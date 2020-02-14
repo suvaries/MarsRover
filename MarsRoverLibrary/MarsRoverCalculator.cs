@@ -17,6 +17,7 @@ namespace MarsRoverLibrary
             foreach (var item in parameters.RoverParameterList)
             {
                 var output = marsRoverService.DoInstructionsForRover(item);
+                outputList.Add(output);
             }
 
             var retVal = string.Join(Environment.NewLine, outputList);
@@ -92,7 +93,12 @@ namespace MarsRoverLibrary
                         throw new Exception();
                     }
 
-                    var secondLineArray = secondLineParameter.Replace(" ", "").ToUpperInvariant().Split(new string[] { "" }, StringSplitOptions.RemoveEmptyEntries);
+                    var secondLineArray =
+                        secondLineParameter.Replace(" ", "").ToUpperInvariant()
+                        .ToArray()
+                        .Select(i => i.ToString())
+                        .ToList();
+
                     if (secondLineArray.Any(i=> !acceptableInstructions.Contains(i)))
                     {
                         throw new Exception();
