@@ -14,7 +14,7 @@
         public string DoInstructionsForRover(RoverParameter roverParameter)
         {
             var position = roverParameter.StartPosition;
-            if (_restrictionsService.OursideTheBoundries(position.Coordinates))
+            if (_restrictionsService.OutsideTheBoundries(position.Coordinates))
             {
                 return "Start coordinates are out of the boundries.";
             }
@@ -28,7 +28,7 @@
             {
                 var newPosition = _movementService.Move(position, instruction);
 
-                if (_restrictionsService.OursideTheBoundries(newPosition.Coordinates))
+                if (_restrictionsService.OutsideTheBoundries(newPosition.Coordinates))
                 {
                     _restrictionsService.OccupyCoordinates(position.Coordinates);
                     return $"{position} Going out of the boundries";

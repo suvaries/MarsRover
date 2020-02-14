@@ -26,7 +26,7 @@ namespace MarsRoverLibrary
             _occupiedCoordinates.Add(coordinates);
         }
 
-        public bool OursideTheBoundries(Point coordinates)
+        public bool OutsideTheBoundries(Point coordinates)
         {
             return !_rectangle.Contains(coordinates);
         }
