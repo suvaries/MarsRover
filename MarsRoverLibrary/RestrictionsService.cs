@@ -8,17 +8,19 @@ namespace MarsRoverLibrary
     {
         private readonly HashSet<Point> _occupiedCoordinates;
 
-        private readonly Rectangle _rectangle;
+        private readonly int _northBoundry;
+        private readonly int _southBoundry;
+        private readonly int _westBoundry;
+        private readonly int _eastBoundry;
 
         public RestrictionsService(Point firstCornerPoint, Point lastCornerPoint)
         {
             _occupiedCoordinates = new HashSet<Point>();
 
-            var x = Math.Min(firstCornerPoint.X, lastCornerPoint.X);
-            var y = Math.Max(firstCornerPoint.Y, lastCornerPoint.Y);
-            var width = Math.Abs(firstCornerPoint.X - lastCornerPoint.X);
-            var height = Math.Abs(firstCornerPoint.Y - lastCornerPoint.Y);
-            _rectangle = new Rectangle(x, y, width, height);
+            _northBoundry = Math.Max(firstCornerPoint.Y, lastCornerPoint.Y);
+            _southBoundry = Math.Min(firstCornerPoint.Y, lastCornerPoint.Y);
+            _westBoundry = Math.Min(firstCornerPoint.X, lastCornerPoint.X);
+            _eastBoundry = Math.Max(firstCornerPoint.X, lastCornerPoint.X);
         }
 
         public void OccupyCoordinates(Point coordinates)
@@ -28,7 +30,27 @@ namespace MarsRoverLibrary
 
         public bool OutsideTheBoundries(Point coordinates)
         {
-            return !_rectangle.Contains(coordinates);
+            if (coordinates.X > _eastBoundry)
+            {
+                return true;
+            }
+
+            if (coordinates.X < _westBoundry)
+            {
+                return true;
+            }
+
+            if (coordinates.Y > _northBoundry)
+            {
+                return true;
+            }
+
+            if (coordinates.Y < _southBoundry)
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public bool PositionIsOccupied(Point coordinates)
